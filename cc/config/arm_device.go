@@ -86,6 +86,9 @@ var (
 		"cortex-a8": []string{
 			"-mcpu=cortex-a8",
 		},
+		"cortex-a9": []string{
+			"-mcpu=cortex-a9",
+		},
 		"cortex-a15": []string{
 			"-mcpu=cortex-a15",
 			"-mfpu=neon-vfpv4",
@@ -205,6 +208,8 @@ func init() {
 		strings.Join(armClangCpuVariantCflags["cortex-a7"], " "))
 	pctx.StaticVariable("ArmClangCortexA8Cflags",
 		strings.Join(armClangCpuVariantCflags["cortex-a8"], " "))
+	pctx.StaticVariable("ArmClangCortexA9Cflags",
+		strings.Join(armClangCpuVariantCflags["cortex-a9"], " "))
 	pctx.StaticVariable("ArmClangCortexA15Cflags",
 		strings.Join(armClangCpuVariantCflags["cortex-a15"], " "))
 	pctx.StaticVariable("ArmClangCortexA53Cflags",
@@ -229,6 +234,7 @@ var (
 		"":               "${config.ArmClangGenericCflags}",
 		"cortex-a7":      "${config.ArmClangCortexA7Cflags}",
 		"cortex-a8":      "${config.ArmClangCortexA8Cflags}",
+		"cortex-a9":      "${config.ArmClangCortexA9Cflags}",
 		"cortex-a15":     "${config.ArmClangCortexA15Cflags}",
 		"cortex-a53":     "${config.ArmClangCortexA53Cflags}",
 		"cortex-a53.a57": "${config.ArmClangCortexA53Cflags}",
