@@ -507,13 +507,13 @@ func (c *deviceConfig) BoardUsesQTIHardware() bool {
 }
 
 func (c *deviceConfig) QTIAudioPath() string {
-	return String(c.config.ProductVariables.QTIAudioPath)
+	return String(c.config.ProductVariables.Carbon.QTIAudioPath)
 }
 
 func (c *deviceConfig) QTIDisplayPath() string {
-	return String(c.config.ProductVariables.QTIDisplayPath)
+	return String(c.config.ProductVariables.Carbon.QTIDisplayPath)
 }
 
 func (c *deviceConfig) QTIMediaPath() string {
-	return String(c.config.ProductVariables.QTIMediaPath)
+	return String(c.config.ProductVariables.Carbon.QTIMediaPath)
 }
