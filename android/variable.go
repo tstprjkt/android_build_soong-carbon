@@ -98,7 +98,7 @@ type variableProperties struct {
 		}
 
 		// include Carbon variables
-		*android.Product_variables
+		Carbon android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -171,7 +171,7 @@ type productVariables struct {
 	BoardUsesQTIHardware    *bool `json:",omitempty"`
 
 	// include Carbon variables
-	*android.ProductVariables
+	Carbon android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
