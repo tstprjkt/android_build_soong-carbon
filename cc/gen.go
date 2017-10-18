@@ -23,8 +23,16 @@ import (
 )
 
 func init() {
+	pctx.VariableFunc("GetBisonPath", func(ctx android.PackageVarContext) string {
+		if override := ctx.Config().Getenv("USE_HOST_BISON"); override == "yes" {
+			return "${HostOutExecutable}/bison"
+		}
+		return "prebuilts/build-tools/${config.HostPrebuiltTag}/bin/bison"
+	})
+
 	pctx.SourcePathVariable("lexCmd", "prebuilts/build-tools/${config.HostPrebuiltTag}/bin/flex")
-	pctx.SourcePathVariable("yaccCmd", "prebuilts/build-tools/${config.HostPrebuiltTag}/bin/bison")
+	pctx.SourcePathVariable("yaccCmd", "${GetBisonPath}")
+
 	pctx.SourcePathVariable("yaccDataDir", "prebuilts/build-tools/common/bison")
 
 	pctx.HostBinToolVariable("aidlCmd", "aidl-cpp")
