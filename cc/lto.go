@@ -115,7 +115,7 @@ func (lto *lto) flags(ctx BaseModuleContext, flags Flags) Flags {
 		if !ctx.isPgoCompile() {
 			flags.Local.LdFlags = append(flags.Local.LdFlags,
 				"-Wl,-plugin-opt,-inline-threshold=0",
-				"-Wl,-plugin-opt,-unroll-threshold=0,
+				"-Wl,-plugin-opt,-unroll-threshold=0",
 			        "-Wl,-plugin-opt=O3",
                                 "-Wl,-O3",
 				"-Wl,--gc-section")
