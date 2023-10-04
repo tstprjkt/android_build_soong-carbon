@@ -117,8 +117,7 @@ func (lto *lto) flags(ctx BaseModuleContext, flags Flags) Flags {
 				"-Wl,-plugin-opt,-inline-threshold=0",
 				"-Wl,-plugin-opt,-unroll-threshold=0",
 			        "-Wl,-plugin-opt=O3",
-                                "-Wl,-O3",
-				"-Wl,--gc-section")
+                                "-Wl,-O3")
 		}
 	}
 	return flags
